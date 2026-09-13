@@ -36,7 +36,6 @@ The game supports Simple and General modes plus a safe placeholder state used fo
 This repository is a sanitized clean snapshot derived from the former `kimbrow-slice/SOSGame` project. Its prior Git history is intentionally not included. Sprint reports, generated build output, machine-specific files, encrypted material, key material, and personal artifacts were excluded from the public history.
 
 
-## License
 
 
 
