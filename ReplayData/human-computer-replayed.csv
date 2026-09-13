@@ -1,0 +1,16 @@
+Player,Score,Color
+Red Player,1,Red
+Blue Player,0,Blue
+
+GridSize,3
+GameMode,Simple
+PlayerMode,Human vs Computer
+
+Player,Row,Column,Letter
+Red Player,1,1,O
+Blue Player,2,0,O
+Red Player,0,1,O
+Blue Player,2,1,O
+Red Player,0,0,O
+Blue Player,1,2,S
+Red Player,1,0,S

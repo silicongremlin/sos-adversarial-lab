@@ -1,0 +1,8 @@
+{
+  "namespace": "silicongremlin",
+  "name": "sos-adversarial-lab",
+  "kind": "experiment",
+  "status": "active",
+  "contact": "research@silicongremlin.io",
+  "public_boundary": "sanitized clean snapshot; no inherited Git history"
+}

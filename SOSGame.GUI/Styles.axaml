@@ -1,0 +1,60 @@
+﻿<!-- Styles.axaml -->
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<!-- Brushes and Colors -->
+	<Styles.Resources>
+		<Color x:Key="BackgroundColor">#FF000000</Color>
+		<SolidColorBrush x:Key="BackgroundBrush"
+						 Color="{DynamicResource BackgroundColor}"/>
+
+		<Color x:Key="PrimaryTextColor">#FFFFFFFF</Color>
+		<SolidColorBrush x:Key="PrimaryTextBrush"
+						 Color="{DynamicResource PrimaryTextColor}"/>
+
+		<Color x:Key="AccentColor">#FFFFD700</Color>
+		<SolidColorBrush x:Key="AccentBrush"
+						 Color="{DynamicResource AccentColor}"/>
+	</Styles.Resources>
+
+	<!-- Title style -->
+	<Style Selector="TextBlock.title">
+		<Setter Property="FontSize" Value="32"/>
+		<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+		<Setter Property="FontWeight" Value="Bold"/>
+	</Style>
+
+	<!-- Scoreboard style -->
+	<Style Selector="TextBlock.scoreboard">
+		<Setter Property="FontSize" Value="18"/>
+		<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+	</Style>
+
+	<!-- Buttons -->
+	<Style Selector="Button">
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="Padding" Value="10,5"/>
+	</Style>
+
+	<!-- RadioButtons -->
+	<Style Selector="RadioButton">
+		<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+	</Style>
+
+	<!-- CheckBoxes -->
+	<Style Selector="CheckBox">
+		<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+	</Style>
+
+	<!-- StackPanels spacing -->
+	<Style Selector="StackPanel">
+		<Setter Property="Spacing" Value="6"/>
+	</Style>
+
+	<!-- Victory banner border by name -->
+	<Style Selector="Border#VictoryBannerContainer">
+		<Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
+		<Setter Property="Padding" Value="10"/>
+	</Style>
+
+</Styles>

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOSGame", "SOSGame\SOSGame.csproj", "{2520EC57-70F6-4581-B7C5-31EE8E8A14BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOSGame.GUI", "SOSGame.GUI\SOSGame.GUI.csproj", "{49442300-F940-4EBB-89C5-E110DB17A6B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOSGame.Logic", "SOSGame.Logic\SOSGame.Logic.csproj", "{F2E28A3D-D79C-4AB6-B211-D8F4FC909B54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOSGame.Tests", "SOSGame.Tests\SOSGame.Tests.csproj", "{CDB329A5-F143-41EE-BC00-C9B506B149EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2520EC57-70F6-4581-B7C5-31EE8E8A14BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2520EC57-70F6-4581-B7C5-31EE8E8A14BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2520EC57-70F6-4581-B7C5-31EE8E8A14BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2520EC57-70F6-4581-B7C5-31EE8E8A14BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49442300-F940-4EBB-89C5-E110DB17A6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49442300-F940-4EBB-89C5-E110DB17A6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49442300-F940-4EBB-89C5-E110DB17A6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49442300-F940-4EBB-89C5-E110DB17A6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E28A3D-D79C-4AB6-B211-D8F4FC909B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E28A3D-D79C-4AB6-B211-D8F4FC909B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E28A3D-D79C-4AB6-B211-D8F4FC909B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E28A3D-D79C-4AB6-B211-D8F4FC909B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB329A5-F143-41EE-BC00-C9B506B149EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB329A5-F143-41EE-BC00-C9B506B149EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB329A5-F143-41EE-BC00-C9B506B149EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB329A5-F143-41EE-BC00-C9B506B149EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

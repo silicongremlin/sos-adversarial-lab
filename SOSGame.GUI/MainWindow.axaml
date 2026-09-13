@@ -1,0 +1,222 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SOSGame.GUI"
+    x:Class="SOSGame.GUI.MainWindow"
+    Title="SOS Game"
+    Width="1500" Height="800"
+    Background="{DynamicResource BackgroundBrush}">
+
+  <Window.Styles>
+    <StyleInclude Source="avares://SOSGame.GUI/Styles.axaml"/>
+  </Window.Styles>
+
+
+  <!-- Main layout grid with three rows: Header, Content, Footer -->
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>  <!-- Header -->
+      <RowDefinition Height="*"/>     <!-- Game Board -->
+      <RowDefinition Height="Auto"/>  <!-- Footer -->
+    </Grid.RowDefinitions>
+
+    <!-- HEADER -->
+    <Grid Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>  <!-- Left: Start/New & player config -->
+        <ColumnDefinition Width="*"/>     <!-- Center: Title, scoreboard, banners -->
+        <ColumnDefinition Width="Auto"/>  <!-- Right: Save checkbox -->
+      </Grid.ColumnDefinitions>
+
+      <!-- Left Column: Buttons + Player Config + Letter selection -->
+      <Grid Grid.Column="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>  <!-- Buttons -->
+          <RowDefinition Height="Auto"/>  <!-- Player config, letter selection -->
+        </Grid.RowDefinitions>
+
+
+        <!-- Player Mode, Per side Options, Letter selection -->
+        <StackPanel Grid.Row="1"
+                    Margin="20">
+          <TextBlock Text="Select Players: "
+                     FontWeight="Bold"
+                     Foreground="{DynamicResource PrimaryTextBrush}"/>
+          <RadioButton x:Name="playerVsPlayerRadio"
+                       Content="Player vs Player"
+                       GroupName="playerMode"/>
+          <RadioButton x:Name="playerVsAIRadio"
+                       Content="Player vs AI"
+                       GroupName="playerMode"/>
+          <RadioButton x:Name="cpuVsCpuRadio"
+                       Content="Computer vs Computer"
+                       GroupName="playerMode"/>
+
+          <!-- Red Player CPU/Human -->
+          <StackPanel x:Name="redCpuOptionsPanel"
+                      Orientation="Horizontal"
+                      IsVisible="False">
+            <TextBlock Text="Red Player:"
+                       Foreground="{DynamicResource PrimaryTextBrush}"
+                       VerticalAlignment="Center"/>
+            <RadioButton x:Name="redHumanRadio"
+                         Content="Human"
+                         GroupName="redSide"
+                         Margin="10,0,5,0"/>
+            <RadioButton x:Name="redCpuRadio"
+                         Content="Computer"
+                         GroupName="redSide"/>
+          </StackPanel>
+
+          <!-- Blue Player CPU/Human -->
+          <StackPanel x:Name="blueCpuOptionsPanel"
+                      Orientation="Horizontal"
+                      IsVisible="False"
+                      Margin="0,5,0,0">
+            <TextBlock Text="Blue Player:"
+                       Foreground="{DynamicResource PrimaryTextBrush}"
+                       VerticalAlignment="Center"/>
+            <RadioButton x:Name="blueHumanRadio"
+                         Content="Human"
+                         GroupName="blueSide"
+                         Margin="10,0,5,0"/>
+            <RadioButton x:Name="blueCpuRadio"
+                         Content="Computer"
+                         GroupName="blueSide"/>
+          </StackPanel>
+
+          <!-- Letter selection for human players -->
+		  <TextBlock Text="Select Your Letter:  "
+                     FontWeight="Bold"
+                     Foreground="{DynamicResource PrimaryTextBrush}"/>
+          <CheckBox x:Name="SelectSCheckBox"
+                    Content="Select S"/>
+          <CheckBox x:Name="SelectOCheckBox"
+                    Content="Select O"/>
+        </StackPanel>
+      </Grid>
+
+      <!-- Center: Title, Scoreboard, Banner/Turn -->
+      <StackPanel Grid.Column="1"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Top"
+                  Spacing="10">
+        <TextBlock x:Name="TitleText"
+                   Classes="title"
+                   Text="Welcome to Jeff Kimbrow's SOS Game"/>
+        <TextBlock x:Name="ScoreBoard"
+                   Classes="scoreboard"
+                   Text="Red Player: [ 0 | 0 ] : Blue Player"/>
+
+        <Border x:Name="VictoryBannerContainer"
+                IsVisible="False"
+                Classes="VictoryBannerContainer">
+          <TextBlock x:Name="VictoryBannerText"
+                     Classes="scoreboard"
+                     Foreground="{DynamicResource AccentBrush}"
+                     FontSize="24"
+                     HorizontalAlignment="Center"/>
+        </Border>
+
+        <TextBlock x:Name="playerTurnDisplay"
+                   Text="Player 1's Turn (Red)"
+                   Foreground="Red"
+                   FontSize="18"
+                   HorizontalAlignment="Center"/>
+      </StackPanel>
+
+      <!-- Save Game Score -->
+      <StackPanel Grid.Column="2"
+                  Orientation="Horizontal"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Top"
+                  Margin="10">
+        <CheckBox x:Name="SaveScoreCheckBox"
+                  Content="Save Game Score"
+                  Padding="10"/>
+      </StackPanel>
+    </Grid>
+
+    <!-- GAME BOARD -->
+    <Border Grid.Row="1"
+            Name="GameBoard"
+            Classes="gameBoard"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+      <local:GridSystem x:Name="GameGrid"/>
+    </Border>
+
+     <!-- FOOTER: Grid Size, Game Mode selector, Game Buttons -->
+  <Grid Grid.Row="2">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>  <!-- Column 0: Grid size -->
+      <ColumnDefinition Width="*"/>     <!-- Column 1: Game type radios -->
+      <ColumnDefinition Width="Auto"/>  <!-- Column 2: Game buttons -->
+    </Grid.ColumnDefinitions>
+
+    <!-- Grid size -->
+    <StackPanel Grid.Column="0"
+                Orientation="Horizontal"
+                VerticalAlignment="Center"
+                Margin="20"
+                Spacing="5">
+      <TextBox Name="GridSizeInput" Width="40" Text="3"/>
+      <TextBlock Text="Input size ≥ 3"
+                 Foreground="White"
+                 VerticalAlignment="Center"/>
+    </StackPanel>
+
+    <!-- Game mode radios -->
+    <StackPanel Grid.Column="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="10">
+      <TextBlock Text="Select Game Mode:"
+                 Foreground="White"
+                 VerticalAlignment="Center"/>
+      <RadioButton Name="SimpleGameRadio"
+                   Content="Simple Game"
+                   GroupName="GameType"/>
+      <RadioButton Name="GeneralGameRadio"
+                   Content="General Game"
+                   GroupName="GameType"/>
+	  <RadioButton Name="VulnerableGameRadio" 
+				   Content="Vulnerable Game State" 
+				   GroupName="GameType"/>
+
+	</StackPanel>
+
+    <!-- Start/New/Replay Game Buttons -->
+    <StackPanel Grid.Column="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Margin="20"
+                Spacing="10">
+      <Button Name="StartGameButton"
+              Content="Start Game"
+              Background="Green"
+              Foreground="White"
+              Width="200"
+              Height="40"
+              FontSize="18"
+              IsEnabled="False"/>
+      <Button Name="NewGameButton"
+              Content="New Game"
+              Background="Orange"
+              Foreground="White"
+              Width="200"
+              Height="40"
+              FontSize="18"
+              IsEnabled="False"/>
+	 <Button  x:Name="ReplayButton" 
+			  Content="Replay Game" 
+		      HorizontalAlignment="Center" 
+		      VerticalAlignment="Center" />
+
+	</StackPanel>
+  </Grid>
+
+  </Grid>
+</Window>

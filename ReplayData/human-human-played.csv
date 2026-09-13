@@ -1,0 +1,25 @@
+Player,Score,Color
+Red Player,5,Red
+Blue Player,2,Blue
+
+GridSize,4
+GameMode,General
+PlayerMode,Human vs Human
+
+Player,Row,Column,Letter
+Red Player,0,0,S
+Blue Player,1,1,O
+Red Player,2,2,S
+Blue Player,1,2,O
+Red Player,0,2,S
+Blue Player,0,1,O
+Red Player,3,0,O
+Blue Player,2,1,S
+Red Player,1,0,O
+Blue Player,2,0,S
+Red Player,3,1,O
+Blue Player,1,3,O
+Red Player,0,3,S
+Blue Player,2,3,S
+Red Player,3,2,O
+Blue Player,3,3,S
