@@ -42,3 +42,8 @@ This repository is a sanitized clean snapshot derived from the former `kimbrow-s
 
 
 
+
+## License
+
+MIT. Fork it, modify it, and build your own version. This repository is provided as-is and carries no maintenance or support commitment.
+
